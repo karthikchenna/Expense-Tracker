@@ -124,6 +124,7 @@ body{
 .transaction_container .label{
     font-size: 18px;
     font-weight: normal;
+    margin-bottom: 5px;
 } 
 
 .transaction_container input{
