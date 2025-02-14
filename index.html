@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+
+    <!------------- CSS LINK ------------->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h3 id="title"><span id="expense_txt">Expense</span> <span id="tracker_txt">Tracker</span></h3>
+
+        <!------------- Balance ------------->
+        <div class="your_balance">
+            <h4>Your Balance:</h4>
+            <h3 id="balance_symbol">₹ <span id="balance">0</span></h3>
+        </div>
+
+        <!------------- Show Income and Expense ------------->
+        <div class="book">
+            <div class="income">
+                <h4>INCOME</h4>
+                <p>₹<span id="income_val">0</span></p>
+            </div>
+
+            <div class="expense">
+                <h4>EXPENSE</h4>
+                <p>₹<span id="expense_val">0</span></p>
+            </div>
+        </div>
+
+        <!------------- History ------------->
+        <div class="history_container">
+            <div class="history_title">
+                <h4>History</h4>
+            </div>
+            <div class="history_list">
+                <p>No Transactions...</p>
+            </div>
+        </div>
+
+        <!------------- Transactions ------------->
+        <div class="transaction_container">
+            <div class="transaction_title">
+                <h4>Add New Transaction</h4>
+            </div>
+            <h4 class="label">Purpose</h4>
+            <input type="text" name="purpose" id="purpose" placeholder="Enter Purpose">
+
+            <h4 class="label">Amount</h4>
+            <input type="text" name="amount" id="amount" placeholder="Enter Amount">
+        </div>
+
+        <!------------- Buttons ------------->
+        <div class="buttons">
+            <button id="income_btn">Income</button>
+            <button id="spent_btn">Spent</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- <script src="scritp2.js"></script> -->
+</body>
+</html>
