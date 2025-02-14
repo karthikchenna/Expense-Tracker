@@ -10,8 +10,8 @@ income_btn.addEventListener('click', ()=>{
     document.getElementById('income_val').innerText = totalIncome;
     document.getElementById('balance').innerText = totalBalance;
     balance_color();
-    clearInputField();
     addHistoryEntry('income');
+    clearInputField();
 });
 
 
@@ -27,8 +27,8 @@ spent_btn.addEventListener('click', ()=>{
     document.getElementById('expense_val').innerText = totalExpense;
     document.getElementById('balance').innerText = totalBalance;    
     balance_color();    
-    clearInputField();
     addHistoryEntry('expense');
+    clearInputField();
 });
 
 function balance_color(){
