@@ -1,17 +1,21 @@
 var income_btn = document.getElementById('income_btn');
+
 income_btn.addEventListener('click', ()=>{
     var amount = parseInt(document.getElementById('amount').value) || 0;
     var income_val = parseInt(document.getElementById('income_val').innerText) || 0;
     var balance = parseInt(document.getElementById('balance').innerText) || 0;
-
+    
     var totalIncome = income_val + amount;
     var totalBalance = balance + amount;
-
+    
     document.getElementById('income_val').innerText = totalIncome;
     document.getElementById('balance').innerText = totalBalance;
-    balance_color();
-    addHistoryEntry('income');
-    clearInputField();
+    
+    if(validate() == true){
+        balance_color();
+        addHistoryEntry('income');
+        clearInputField();
+    }    
 });
 
 
@@ -25,11 +29,26 @@ spent_btn.addEventListener('click', ()=>{
     var totalBalance = balance - amount;
 
     document.getElementById('expense_val').innerText = totalExpense;
-    document.getElementById('balance').innerText = totalBalance;    
-    balance_color();    
-    addHistoryEntry('expense');
-    clearInputField();
+    document.getElementById('balance').innerText = totalBalance;   
+    
+    if(validate() == true){
+        balance_color();
+        addHistoryEntry('expense');
+        clearInputField();
+    }    
 });
+
+
+function validate(){
+    var amount = parseInt(document.getElementById('amount').value) || 0;
+    var purpose = document.getElementById('purpose').value.trim();
+    if (!purpose || amount <= 0) {
+        alert('Please enter a valid purpose and amount.');
+        return false; 
+    }
+    return true;
+}
+
 
 function balance_color(){
     var balance = document.getElementById('balance');
